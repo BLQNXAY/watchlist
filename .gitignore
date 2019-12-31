@@ -4,3 +4,5 @@ __pycahce__
 .DS_Store
 .env
 .db
+htmlcov/
+.coverage

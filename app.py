@@ -82,11 +82,11 @@ def admin(username, password):
 	db.create_all()
 	user = User.query.first()
 	if user is not None:
-		click.echo('Update user...')
+		click.echo('Updating user...')
 		user.username = username
 		user.set_password(password)
 	else:
-		click.echo('Create user...')
+		click.echo('Creating user...')
 		user = User(username=username, name='Admin')
 		user.set_password(password)
 		db.session.add(user)
@@ -194,11 +194,5 @@ def delete(movie_id):
 	movie = Movie.query.get_or_404(movie_id)
 	db.session.delete(movie)
 	db.session.commit()
-	flash('Item delete')
+	flash('Item deleted')
 	return redirect(url_for('index'))
-
-@app.route('/test')
-def test_url_for():
-	print(url_for('user_page', name='XAY'))
-	print(url_for('test_url_for', page=2))
-	return 'Test page'
