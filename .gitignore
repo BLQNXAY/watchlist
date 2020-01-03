@@ -1,8 +1,9 @@
 *.pyc
 *~
 __pycahce__
-.DS_Store
 .env
 .db
-htmlcov/
 .coverage
+
+env/
+htmlcov/
